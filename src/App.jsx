@@ -7,11 +7,11 @@ import './App.css'
 function App() {
   return (
     <Router>
-    <Routes>
-      <Route path = '/' element={ <Make />} />
-      <Route path = '/:make' element={ <Model />} />
-      <Route path = '/:make/:model' element={<Info />} />
-    </Routes>
+      <Routes>
+        <Route path = '/' element={ <Make />} />
+        <Route path = '/:make' element={ <Model />} />
+        <Route path = '/:make/:model' element={<Info />} />
+      </Routes>
     </Router>
   )
 }
