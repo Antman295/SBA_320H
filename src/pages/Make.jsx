@@ -8,6 +8,7 @@ export default function Make() {
   useEffect(() => {
     async function fetchData() {
       const carMakes = await getAllCars();
+      console.log("Fetched car makes:", carMakes)
       setMakes(carMakes);
     }
 
@@ -18,13 +19,17 @@ export default function Make() {
     return (
       <div>
         <h1>Select a Car Make</h1>
-        {makes.map((make) => (
-          <div key={make.url}>
-            <Link to={`/v1/${make.make}`}>
-              {make.make}
-            </Link>
-            </div>
-        ))}
+        {makes && makes.length > 0 ? (
+      makes.map((make) => (
+        <div key={make.url}>
+          <Link to={`/v1/${make.make}`}>
+            {make.make}
+          </Link>
+        </div>
+      ))
+    ) : (
+      <p>No car makes available.</p> // Display a message if makes is empty
+    )}
       </div>
     );
   }
