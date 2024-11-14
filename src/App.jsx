@@ -1,19 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Make from './pages/Make';
-import Model from './pages/Model';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Info from './pages/Info';
-import './App.css'
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path = '/' element={ <Make />} />
-        <Route path = '/:make' element={ <Model />} />
-        <Route path = '/:make/:model' element={<Info />} />
-      </Routes>
-    </Router>
-  )
-}
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Info />} />
+                <Route path="/cars/:make/:model/:year" element={<Info />} />
+            </Routes>
+        </Router>
+    );
+};
 
-export default App
+export default App;
