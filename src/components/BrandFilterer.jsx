@@ -1,3 +1,0 @@
-function BrandFilterer({ formData, setFormData }) {
-    
-}

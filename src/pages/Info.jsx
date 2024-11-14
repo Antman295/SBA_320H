@@ -5,6 +5,7 @@ export default function CarInfo() {
     const [car, setCar] = useState(null);
     const { model } = useParams();
 
+    const apiKey = "Y4bD5SkLSpvpq22iB3W6cw==aJO13M7tNi8wmX72"
     const url = `https://api.api-ninjas.com/v1/cars?limit=2&model=${model}`;
 
     async function getData(){

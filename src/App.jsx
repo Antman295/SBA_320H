@@ -1,15 +1,17 @@
-import { useState } from 'react'
+import { Routes, Route } from 'react'
+import Make from './pages/Make';
+import Model from './pages/Model';
+import Info from './pages/Info';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h1>Car Details</h1>
-      <p>Please enter the car's make. I.E. Ford, Toyota, Audi, etc...</p>
-      <p>Please enter the model name.</p>
-      <p>Please enter the year.</p>
+    <Routes>
+      <Route path = '/' element={ <Make />} />
+      <Route path = '/:make' element={ <Model />} />
+      <Route path = '/:make/:model' element={<Info />} />
+    </Routes>
     </>
   )
 }
