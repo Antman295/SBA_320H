@@ -1,27 +1,23 @@
 import {useState} from "react";
 
-export default function Form(props) {
-    const [formData, setFormData] = useState({
-        searchName: "",
-    });
-
-    const handleChange = (event) => {
-        setFormData({...formData, [event.target.name]: event.target.value});
-    };
+export default function Form({pokemonSearch}) {
+    const [searchName, setSearchName] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.pokemonSearch(formData.searchName)
+        pokemonSearch(searchName)
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text"
-                name="searchName"
-                onChange={handleChange}
-                value={formData.searchName} />
-                <input type="submit" value="submit" />
+                <h3>Enter Pokemon name in the text field below:</h3>
+                <input 
+                type="text"
+                value={searchName}
+                onChange={(e) => setSearchName(e.target.value)}
+                 />
+                <button type="submit">Seach</button>
             </form>
         </div>
     )

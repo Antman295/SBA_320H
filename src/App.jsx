@@ -7,17 +7,20 @@ import getAllPokemon from './utilites/api'
 
 export default function App() {
     const [pokemon, setPokemon] = useState('');
+    const [searchName, setSearchName] = useState("");
 
-    const getPokemon = async(searchName) => {
+    const getPokemon = async(name) => {
+        setSearchName(name);
         try {
-            const data = await getAllPokemon(searchName);
+            const data = await getAllPokemon(name);
             if (data) {
                 setPokemon(data);
             } else {
-                setPokemon('');
+                setPokemon(null);
             }
         } catch (err) {
             console.error("Could not retrieve Pokemon data: ", err);
+            setPokemon(null);
         }
     }
     useEffect(() => {
@@ -27,7 +30,7 @@ export default function App() {
     return (
         <div className="App">
             <Form pokemonSearch={getPokemon}/>
-            <PokemonDisplay pokemon={pokemon} />
+            <PokemonDisplay pokemon={pokemon} searchName={searchName} />
         </div>
     )
 } 

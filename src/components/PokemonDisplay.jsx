@@ -1,4 +1,4 @@
-export default function PokemonDisplay({pokemon}) {
+export default function PokemonDisplay({pokemon, searchName}) {
 
     const loaded = () => {
       return (
@@ -16,7 +16,11 @@ export default function PokemonDisplay({pokemon}) {
     };
   
     const loading = () => {
-      return <h1>Waiting for Pokemon to form...</h1>;
+    return <>
+        <h1>{searchName} does not exist!</h1>
+        <h2>Make sure this Pokemon actually exist and check your spelling.</h2>
+    </>
+      
     };
   
     return pokemon ? loaded() : loading();
