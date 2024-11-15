@@ -1,22 +1,21 @@
-export const getAllCars= async (make, model, year) => {
-try {
-    const response = await fetch(`https://thingproxy.freeboard.io/fetch/https://api-ninjas.com/api/cars?make=${make}&model=${model}&year=${year}`, {
-        headers: {
-            'X-Api-Key': 'Y4bD5SkLSpvpq22iB3W6cw==aJO13M7tNi8wmX72'
+export async function getAllPokemon(name) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`;
+
+    try {
+
+        const response = await fetch(url);
+        if (!response.ok) {
+            // Log the status and error text for more details
+            const errorText = await response.text();
+            console.error('Error fetching data:', response.status, errorText);
+            return null;
         }
-    });
-
-    if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Error fetching data:', response.status, errorText);
-        return [];
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Fetch error:', error);
+        return null;
     }
-
-    const data = await response.json();
-    console.log('API Response:', data);
-    return data.results || [];
-} catch (error) {
-    console.error('Fetch error:', error);
-    return [];
 }
-};
+
+export default getAllPokemon;
