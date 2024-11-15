@@ -6,7 +6,7 @@ import Form from "./components/Form"
 import getAllPokemon from './utilites/api'
 
 export default function App() {
-    const [pokemon, setPokemon] = useState(null);
+    const [pokemon, setPokemon] = useState('');
 
     const getPokemon = async(searchName) => {
         try {
@@ -14,7 +14,7 @@ export default function App() {
             if (data) {
                 setPokemon(data);
             } else {
-                setPokemon(null);
+                setPokemon('');
             }
         } catch (err) {
             console.error("Could not retrieve Pokemon data: ", err);
