@@ -3,17 +3,21 @@ export default function PokemonDisplay({pokemon}) {
     const loaded = () => {
       return (
         <>
-        <h1>{movie.Title}</h1>
-        <h2>{movie.Genre}</h2>
-        <img src={movie.Poster} alt={movie.Title} />
-        <h2>{movie.Year}</h2>
+        <h1>{pokemon.name}</h1>
+        <img src={pokemon.sprites?.front_default} alt={pokemon.name} />
+        <h2>Abilities:</h2>
+            <ul>
+                {pokemon.abilities.map((abilityObj, index) => (
+                    <li key={index}>{abilityObj.ability.name}</li>
+                ))}
+            </ul>
         </>
       )
     };
   
     const loading = () => {
-      return <h1>No Movie to Display</h1>;
+      return <h1>Waiting for Pokemon to form...</h1>;
     };
   
-    return movie ? loaded() : loading();
+    return pokemon ? loaded() : loading();
   }

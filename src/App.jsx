@@ -8,9 +8,9 @@ import getAllPokemon from './utilites/api'
 export default function App() {
     const [pokemon, setPokemon] = useState(null);
 
-    const getPokemon = async(searchTerm) => {
+    const getPokemon = async(searchName) => {
         try {
-            const data = await getAllPokemon(searchTerm);
+            const data = await getAllPokemon(searchName);
             if (data) {
                 setPokemon(data);
             } else {
