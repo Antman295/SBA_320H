@@ -1,8 +1,18 @@
-# React + Vite
+# SBA 320
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
+This is a practical web application created with React, Javascript and some CSS.
 
-Currently, two official plugins are available:
+## Technolgies Used
+The website was created with the use of JavaScript for the functionality, React for the frontend development, and a little bit of CSS for the styling. All of the code was done in Microsoft Visual Studio Code and committed to a GitHub Repository. I also used a Pokemon API to retrieve the data, which is linked below in acknowledgments.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Link to my GitHub] https://github.com/Antman295
+
+## Approach Taken
+
+
+## Instructions
+To use this website, type in any Pokemon to get information on it. If the Pokemon is invalid, the website will say to make sure the Pokemon actually exists and to check for spelling.
+
+## Acknowledgements
+[Pokemon API] https://pokeapi.co/
