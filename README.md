@@ -9,7 +9,7 @@ The website was created with the use of JavaScript for the functionality, React 
 [Link to my GitHub] https://github.com/Antman295
 
 ## Approach Taken
-
+At first, I was going to do a Car Shop with a car API, but that API did not work and kept giving me a CORS error. So, I went a different route and used the Pokemon API linked below where users can look up info on a Pokemon as that data comes from the API.
 
 ## Instructions
 To use this website, type in any Pokemon to get information on it. If the Pokemon is invalid, the website will say to make sure the Pokemon actually exists and to check for spelling.
