@@ -16,3 +16,4 @@ To use this website, type in any Pokemon to get information on it. If the Pokemo
 
 ## Acknowledgements
 [Pokemon API] https://pokeapi.co/
+[Pokemon Font Generator for the title] https://fontmeme.com/pokemon-font/

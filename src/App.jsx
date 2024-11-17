@@ -29,6 +29,7 @@ export default function App() {
 
     return (
         <div className="App">
+            <img src= 'src/images/86f51da100ba4a470adcb39ee371902e.png' alt='Title' />
             <Form pokemonSearch={getPokemon}/>
             <PokemonDisplay pokemon={pokemon} searchName={searchName} />
         </div>

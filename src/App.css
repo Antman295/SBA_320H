@@ -7,5 +7,7 @@
 
 ul {
   list-style: none;
-  align-items: center;
+  text-align: center;
+  padding-left: 0;
 }
+
